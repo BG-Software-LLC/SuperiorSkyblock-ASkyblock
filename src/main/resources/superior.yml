@@ -1,0 +1,441 @@
+####################################################
+##                                                ##
+##         SuperiorSkyblock Configuration         ##
+##     Founded by Cloth, maintenanced by Ome_R    ##
+##                                                ##
+####################################################
+
+# Should world borders be enabled?
+world-borders: true
+
+# This section handles all stacked-blocks settings
+stacked-blocks:
+  # Should the stacked-blocks feature be enabled?
+  enabled: true
+
+  # List all the worlds that you don't want stacked blocks to be enabled in.
+  # If you want to enable all worlds, please set disabled-worlds: []
+  disabled-worlds:
+  - disabled_world
+
+  # Set a custom name for the hologram above the stacked blocks
+  # If you don't want to see the hologram, set custom-name: ''
+  custom-name: '&bx{0} &7{1}'
+
+  # List all stacked-blocks materials here
+  # Make sure you follow the "TYPE" and "TYPE:DATA" formats
+  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+  materials:
+  - DIAMOND_BLOCK
+  - EMERALD_BLOCK
+  - IRON_BLOCK
+  - GOLD_BLOCK
+  - REDSTONE_BLOCK
+  - COAL_BLOCK
+  - DIAMOND_ORE
+  - GOLD_ORE
+  - EMERALD_ORE
+  - IRON_ORE
+  - REDSTONE_ORE
+  - COAL_ORE
+
+# This section handles all available upgrades
+upgrades:
+  # How many rows will the upgrades gui have?
+  size: 4
+
+  # The title of the gui
+  title: '&lIsland Upgrades'
+
+  # Here you can list all fill items for the gui
+  # If you don't want any, you can safely remove this section.
+  fill-items:
+    '1':
+      type: STAINED_GLASS_PANE
+      data: 3
+      name: '&f'
+      slots: 0,1,7,8,9,17,18,19,25,26,27,28,29,33,34,35
+    '2':
+      type: STAINED_GLASS_PANE
+      data: 9
+      name: '&f'
+      slots: 2,3,5,6,10,16,20,24,30,32
+    '3':
+      type: STAINED_GLASS_PANE
+      data: 11
+      name: '&f'
+      slots: 4,12,14,22,31
+
+  # From here, you can configure all of your upgrades.
+  # If you don't want an upgrade, you can safely remove it's section.
+
+  #######################################
+  ##                                   ##
+  ##           HOPPERS LIMIT           ##
+  ##                                   ##
+  #######################################
+  hoppers-limit:
+    # Here you can set all values for all the upgrades for hopper limits.
+    levels:
+      # This is the default limit for all the islands.
+      default:
+        multiplier: 10
+      '1':
+        multiplier: 16
+        price: 1000000.0
+      '2':
+        multiplier: 32
+        price: 3000000.0
+      '3':
+        multiplier: 64
+        price: 9000000.0
+
+    # Here you can configure the item for hoppers limit in the gui
+    gui-item:
+      slot: 11
+      max-level:
+        type: HOPPER
+        name: '&c&lMAX LEVEL'
+        lore:
+        - '&7You have reached the maxmimum'
+        - '&7level of the hoppers limit!'
+      next-level:
+        type: HOPPER
+        name: '&d&lHopper Increase'
+        lore:
+        - '&7'
+        - '&dUpgrade Level &e{0}'
+        - '&7'
+        - '&7Purchasing the hopper upgrade'
+        - '&7will increase your island''s'
+        - '&7max hoppers limit.'
+        - '&7'
+        - '&dAmount: &f{1}x Hoppers'
+        - '&dPrice: &f${2}'
+        - '&7'
+        - '&aLeft-click to purchase upgrade.'
+
+  #######################################
+  ##                                   ##
+  ##            CROP GROWTH            ##
+  ##                                   ##
+  #######################################
+  crop-growth:
+    # Here you can set all values for all the upgrades for crop growth.
+    levels:
+      default:
+        multiplier: 1
+      '1':
+        multiplier: 2
+        price: 100000.0
+      '2':
+        multiplier: 3
+        price: 500000.0
+      '3':
+        multiplier: 4
+        price: 1000000.0
+
+    # Here you can configure the item for crop growth in the gui
+    gui-item:
+      slot: 13
+      max-level:
+        type: DIAMOND_HOE
+        name: '&c&lMAX LEVEL'
+        lore:
+        - '&7You have reached the maxmimum'
+        - '&7level of the crop growth!'
+      next-level:
+        type: DIAMOND_HOE
+        name: '&e&lCrop Growth'
+        lore:
+        - '&7'
+        - '&eUpgrade Level {0}'
+        - '&7'
+        - '&7Purchasing the growth upgrade'
+        - '&7gives all crops within your island'
+        - '&7increased growth speed.'
+        - '&7'
+        - '&eGrowth: &f{1}x Speed'
+        - '&ePrice: &f${2}'
+        - '&7'
+        - '&aLeft-click to purchase upgrade.'
+
+  #######################################
+  ##                                   ##
+  ##           SPAWNER RATES           ##
+  ##                                   ##
+  #######################################
+  spawner-rates:
+    # Here you can set all values for all the upgrades for spawner rates.
+    levels:
+      default:
+        multiplier: 1
+      '1':
+        multiplier: 4
+        price: 500000.0
+      '2':
+        multiplier: 6
+        price: 1000000.0
+      '3':
+        multiplier: 8
+        price: 2500000.0
+
+    # Here you can configure the item for spawner rates in the gui
+    gui-item:
+      slot: 15
+      max-level:
+        type: MOB_SPAWNER
+        name: '&c&lMAX LEVEL'
+        lore:
+        - '&7You have reached the maxmimum'
+        - '&7level of the spawner rates!'
+      next-level:
+        type: MOB_SPAWNER
+        name: '&b&lSpawner Boost'
+        lore:
+        - '&7'
+        - '&bUpgrade Level &e{0}'
+        - '&7'
+        - '&7Purchasing the spawner upgrade'
+        - '&7gives all spawners within your island'
+        - '&7increased spawn speed.'
+        - '&7'
+        - '&bBoost: &f{1}x Speed'
+        - '&bPrice: &f${2}'
+        - '&7'
+        - '&aLeft-click to purchase upgrade.'
+
+  #######################################
+  ##                                   ##
+  ##             MOB DROPS             ##
+  ##                                   ##
+  #######################################
+  mob-drops:
+    # Here you can set all values for all the upgrades for mob drops.
+    levels:
+      default:
+        multiplier: 1
+      '1':
+        multiplier: 2
+        price: 100000.0
+      '2':
+        multiplier: 3
+        price: 2000000.0
+      '3':
+        multiplier: 5
+        price: 5000000.0
+
+    # Here you can configure the item for mob drops in the gui
+    gui-item:
+      slot: 21
+      max-level:
+        type: ROTTEN_FLESH
+        name: '&c&lMAX LEVEL'
+        lore:
+        - '&7You have reached the maxmimum'
+        - '&7level of the mob drops!'
+      next-level:
+        type: ROTTEN_FLESH
+        name: '&4&lPremium Drops'
+        lore:
+        - '&7'
+        - '&4Upgrade Level &e{0}'
+        - '&7'
+        - '&7Purchasing the drops upgrade'
+        - '&7gives all mobs within your island'
+        - '&7increased loot drops.'
+        - '&7'
+        - '&4Amount: &f{1}x Drops'
+        - '&4Price: &f${2}'
+        - '&7'
+        - '&aLeft-click to purchase upgrade.'
+
+  #######################################
+  ##                                   ##
+  ##          CUSTOM UPGRADES          ##
+  ##                                   ##
+  #######################################
+  custom-upgrades:
+    # Custom name for your upgrade
+    island-size:
+      # Here you can set all values for all the upgrades for island sizes.
+      levels:
+        '1':
+          price: 100000.0
+          # Placeholder replaces the '{1}' symbol in the gui item
+          placeholder: '150'
+          commands:
+          - 'asadmin setrange <player> 150'
+        '2':
+          price: 2000000.0
+          placeholder: '200'
+          commands:
+          - 'asadmin setrange <player> 200'
+        '3':
+          price: 5000000.0
+          placeholder: '250'
+          commands:
+          - 'asadmin setrange <player> 250'
+
+      # Here you can configure the item for island sizes in the gui
+      gui-item:
+        slot: 23
+        max-level:
+          type: DIAMOND
+          name: '&c&lMAX LEVEL'
+          lore:
+          - '&7You have reached the maxmimum'
+          - '&7level of the island sizes!'
+        next-level:
+          type: DIAMOND
+          name: '&a&lIsland Sizes'
+          lore:
+          - '&7'
+          - '&aUpgrade Level &e{0}'
+          - '&7'
+          - '&7Purchasing the size upgrade'
+          - '&7will increase your island''s size.'
+          - '&7'
+          - '&aSize: &f{1} Blocks'
+          - '&aPrice: &f${2}'
+          - '&7'
+          - '&aLeft-click to purchase upgrade.'
+
+# This section handles all top gui settings
+top-gui:
+  # Everytime you place / break a block, the island worth will be changed.
+  # But, I added a task that will insure to correct the island worth. (in ticks)
+  check-interval: 200
+
+  # How many rows will the upgrades gui have?
+  size: 3
+
+  # The title of the gui
+  title: '&lTop Islands'
+
+  # Here you can list all fill items for the gui
+  # If you don't want any, you can safely remove this section.
+  fill-items:
+    '1':
+      type: STAINED_GLASS_PANE
+      data: 11
+      name: '&f'
+      slots: 0,1,7,8,9,17
+    '2':
+      type: STAINED_GLASS_PANE
+      data: 9
+      name: '&f'
+      slots: 2,6,10,16,18,26
+    '3':
+      type: STAINED_GLASS_PANE
+      data: 3
+      name: '&f'
+      slots: 3,5,11,13,15
+
+  # Here is the item for valid island
+  island-item:
+    type: SKULL_ITEM
+    data: 3
+    name: '&e&l[!] Island: &6&n{0}&7 (#{1})'
+    lore:
+    - '&7'
+    - '&6&l* &e&lIsland Level &7{2}'
+    - '&7'
+    - '&6&l* &e&lPlace &7#{1}'
+    - '&6&l* &e&lWorth &7${3}'
+    - '&7'
+    - '&6&l* &e&lMembers:'
+    - '{4}:&f  - &7{}'
+    - '&7'
+    - '&7&o(( &f&oLeft-Click &7&oto view their items. ))'
+    - '&7&o(( &f&oRight-Click &7&oto teleport to island warp. ))'
+
+  # Here is the item for invalid island
+  no-island-item:
+    type: SKULL_ITEM
+    data: 3
+    name: '&cInvalid Island'
+
+  # Here you can set the slots of the island items.
+  slots: '4,12,14,19,20,21,22,23,24,25'
+
+  # This section handles all counted blocks settings
+  counted-blocks:
+    # Should counted blocks feature be enabled?
+    enabled: true
+
+    # How many rows will the upgrades gui have?
+    size: 5
+
+    # The title of the gui
+    title: '{0} &n${1}'
+
+    # Here you can list all fill items for the gui
+    # If you don't want any, you can safely remove this section.
+    fill-items:
+      '1':
+        type: STAINED_GLASS_PANE
+        data: 11
+        name: '&f'
+        slots: 0,8,36,37,44
+      '2':
+        type: STAINED_GLASS_PANE
+        data: 9
+        name: '&f'
+        slots: 9,10,17,27,35
+      '3':
+        type: STAINED_GLASS_PANE
+        data: 3
+        name: '&f'
+        slots: 18,19,20,21,22,23,24,25,26
+      '4':
+        type: MOB_SPAWNER
+        name: '&e&lSPAWNERS ->'
+        slots: 1
+      '5':
+        type: BOOK_AND_QUILL
+        name: '&e&lITEMS ->'
+        slots: 28
+
+    # Here you can configure how the block item will look in gui.
+    # The material of the block will be the same as the block.
+    # Spawners will be displayed as player heads.
+    block-item:
+      name: '&e&l[!] &7{0}'
+      lore:
+      - '&6&l* &e&lQuantity &fx{1}'
+
+    # Here you can list all items you want to get counted in is top.
+    # Please follow the "TYPE:SLOT", "SPAWNER:ENTITY_TYPE:SLOT" and "TYPE:DATA:SLOT" formats.
+    materials:
+    - 'MOB_SPAWNER:IRON_GOLEM:2'
+    - 'MOB_SPAWNER:BLAZE:3'
+    - 'MOB_SPAWNER:SPIDER:4'
+    - 'MOB_SPAWNER:COW:5'
+    - 'MOB_SPAWNER:ZOMBIE:6'
+    - 'MOB_SPAWNER:SKELETON:7'
+    - 'MOB_SPAWNER:CREEPER:11'
+    - 'MOB_SPAWNER:PIG_ZOMBIE:12'
+    - 'MOB_SPAWNER:GHAST:13'
+    - 'MOB_SPAWNER:SLIME:14'
+    - 'MOB_SPAWNER:GUARDIAN:15'
+    - 'MOB_SPAWNER:SQUID:16'
+    - 'HOPPER:29'
+    - 'BEACON:30'
+    - 'IRON_BLOCK:31'
+    - 'GOLD_BLOCK:32'
+    - 'DIAMOND_BLOCK:33'
+    - 'EMERALD_BLOCK:34'
+    - 'BEDROCK:38'
+    - 'ENDER_CHEST:39'
+    - 'DRAGON_EGG:40'
+    - 'CHEST:41'
+    - 'TRAPPED_CHEST:42'
+    - 'ENCHANTMENT_TABLE:43'
+
+# This section handles all custom names of entities & materials
+# If you don't want any custom-names, just use 'AIR: 'Air''
+# Support color codes
+custom-names:
+  AIR: 'Air'
+  DIAMOND_BLOCK: 'Diamond Block'
